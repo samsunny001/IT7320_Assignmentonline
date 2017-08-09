@@ -4,9 +4,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class login {
 
@@ -47,7 +50,7 @@ public class login {
 		frmLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmLogin.getContentPane().setLayout(null);
 		
-		JLabel lblUserName = new JLabel("User Name");
+		JLabel lblUserName = new JLabel("Username");
 		lblUserName.setBounds(90, 79, 92, 14);
 		frmLogin.getContentPane().add(lblUserName);
 		
@@ -57,15 +60,43 @@ public class login {
 		textField.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(90, 127, 57, 14);
+		lblPassword.setBounds(90, 127, 99, 14);
 		frmLogin.getContentPane().add(lblPassword);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(131, 168, 89, 23);
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String password = passwordField.getText();
+				String username = textField.getText();
+				
+				if(password.contains("123456") && username.contains("sam")){
+					passwordField.setText(null);
+					textField.setText(null);
+					
+					productpage info = new productpage();
+					productpage.main(null);
+				}
+				else{
+					JOptionPane.showMessageDialog(null, "Invalid Login Details","Login Error",JOptionPane.ERROR_MESSAGE );
+					
+				}
+			}
+		});
+		btnLogin.setBounds(73, 168, 89, 23);
 		frmLogin.getContentPane().add(btnLogin);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(192, 124, 86, 20);
 		frmLogin.getContentPane().add(passwordField);
+		
+		JButton btnNewButton = new JButton("Reset");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textField.setText(null);
+				passwordField.setText(null);
+			}
+		});
+		btnNewButton.setBounds(233, 168, 89, 23);
+		frmLogin.getContentPane().add(btnNewButton);
 	}
 }

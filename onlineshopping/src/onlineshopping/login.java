@@ -10,7 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+import onlineshopping.DBConnection.*;
+import java.sql.*;
 public class login {
 
 	private JFrame frmLogin;
@@ -19,8 +20,16 @@ public class login {
 
 	/**
 	 * Launch the application.
+	 * @throws SQLException 
 	 */
-	public static void main(String[] args) {
+	
+	 
+	public static void main(String[] args) throws SQLException {
+		DBConnection ob= new DBConnection();
+		Connection con= ob.getConnectione();
+		
+		
+			
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -33,16 +42,12 @@ public class login {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+	
 	public login() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	
 	private void initialize() {
 		frmLogin = new JFrame();
 		frmLogin.setTitle("login");
@@ -66,20 +71,20 @@ public class login {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				DBConnection ob= new DBConnection();
+				Connection con= ob.getConnectione();
+				//conn.setVisible(true);
+				
 				String password = passwordField.getText();
 				String username = textField.getText();
+				try {
+					ob.login(username, password, con);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
-				if(password.contains("123456") && username.contains("sam")){
-					passwordField.setText(null);
-					textField.setText(null);
-					
-					productpage info = new productpage();
-					productpage.main(null);
-				}
-				else{
-					JOptionPane.showMessageDialog(null, "Invalid Login Details","Login Error",JOptionPane.ERROR_MESSAGE );
-					
-				}
 			}
 		});
 		btnLogin.setBounds(73, 168, 89, 23);

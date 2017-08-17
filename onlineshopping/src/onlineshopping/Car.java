@@ -68,13 +68,7 @@ public class Car extends JFrame {
 		lblNewLabel.setBounds(136, 11, 120, 28);
 		contentPane.add(lblNewLabel);
 		
-		txtcaid = new JTextField();
-		txtcaid.setEditable(false);
-		txtcaid.setBounds(170, 67, 86, 20);
-		contentPane.add(txtcaid);
-		txtcaid.setColumns(10);
-		txtcaid.setVisible(false);
-		
+	
 		txtcapro = new JTextField();
 		txtcapro.setEditable(false);
 		txtcapro.setBounds(170, 98, 86, 20);
@@ -86,17 +80,23 @@ public class Car extends JFrame {
 		txtcade.setBounds(170, 129, 86, 20);
 		contentPane.add(txtcade);
 		txtcade.setColumns(10);
-		
+		txtcacount = new JTextField();
+		txtcacount.setBounds(170, 191, 86, 20);
+		contentPane.add(txtcacount);
+		txtcacount.setColumns(10);
 		txtcaco = new JTextField();
 		txtcaco.setEditable(false);
 		txtcaco.setBounds(170, 160, 86, 20);
 		contentPane.add(txtcaco);
 		txtcaco.setColumns(10);
 		
-		txtcacount = new JTextField();
-		txtcacount.setBounds(170, 191, 86, 20);
-		contentPane.add(txtcacount);
-		txtcacount.setColumns(10);
+		txtcaid = new JTextField();
+		txtcaid.setEditable(false);
+		txtcaid.setBounds(170, 67, 86, 20);
+		contentPane.add(txtcaid);
+		txtcaid.setColumns(10);
+		txtcaid.setVisible(false);
+		
 		
 		JLabel lblNewLabel_2 = new JLabel("Product Name");
 		lblNewLabel_2.setBounds(51, 100, 119, 17);

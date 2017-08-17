@@ -56,6 +56,7 @@ public class Car extends JFrame {
 	 * Create the frame.
 	 */
 	public Car() {
+		//Car function
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 388);
 		contentPane = new JPanel();

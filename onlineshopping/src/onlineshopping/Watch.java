@@ -67,12 +67,6 @@ public class Watch extends JFrame {
 		lblNewLabel.setBounds(225, 11, 165, 42);
 		contentPane.add(lblNewLabel);
 		
-		txtwatid = new JTextField();
-		txtwatid.setEditable(false);
-		txtwatid.setBounds(320, 76, 86, 20);
-		contentPane.add(txtwatid);
-		txtwatid.setColumns(10);
-		txtwatid.setVisible(false);
 		
 		txtproname = new JTextField();
 		txtproname.setEditable(false);
@@ -80,17 +74,25 @@ public class Watch extends JFrame {
 		contentPane.add(txtproname);
 		txtproname.setColumns(10);
 		
+		txtwatid = new JTextField();
+		txtwatid.setEditable(false);
+		txtwatid.setBounds(320, 76, 86, 20);
+		contentPane.add(txtwatid);
+		txtwatid.setColumns(10);
+		txtwatid.setVisible(false);
+		txtprocost = new JTextField();
+		txtprocost.setEditable(false);
+		txtprocost.setBounds(224, 138, 86, 20);
+		contentPane.add(txtprocost);
+		txtprocost.setColumns(10);
+		
 		txtprode = new JTextField();
 		txtprode.setEditable(false);
 		txtprode.setBounds(225, 107, 86, 20);
 		contentPane.add(txtprode);
 		txtprode.setColumns(10);
 		
-		txtprocost = new JTextField();
-		txtprocost.setEditable(false);
-		txtprocost.setBounds(224, 138, 86, 20);
-		contentPane.add(txtprocost);
-		txtprocost.setColumns(10);
+	
 		
 		txtprocount = new JTextField();
 		txtprocount.setBounds(225, 176, 86, 20);

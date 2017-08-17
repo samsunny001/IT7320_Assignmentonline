@@ -26,7 +26,7 @@ public class Watch extends JFrame {
 	private static JTextField txtprocount;
 
 	/**
-	 * Launch the application hh.
+	 * Launch the application hhh.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
